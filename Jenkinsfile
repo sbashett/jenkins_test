@@ -1,10 +1,14 @@
 
 pipeline {
-    agent { docker { image 'python:3.7.4' } }
+    agent any
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                sh 'ls -a'
+                sh '''
+                    echo "multi line test"
+                    ls -hls
+                    '''
             }
         }
     }
